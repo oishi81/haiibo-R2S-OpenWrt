@@ -6,6 +6,10 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # 更改默认 Shell 为 zsh
 # sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
+# 更改默认PPPOE账号密码
+sed -i "s/username='username'/username='ad54263044'/g" package/base-files/files/bin/config_generate
+sed -i "s/password='password'/password='8e3iAMmv'/g" package/base-files/files/bin/config_generate
+
 # TTYD 免登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
